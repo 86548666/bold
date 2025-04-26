@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiCargo - China-Mongolia Shipping & Logistics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">Hi<span>Cargo</span></a>
+            <div style="display: flex; align-items: center;">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Link Address</a></li>
+                        <li><a href="#">Cargo</a></li>
+                        <li><a href="#" onclick="openModal()">Login</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="lang-switcher">
+                    <button class="active">EN</button>
+                    <button>MN</button>
+                    <button>CN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Reliable Shipping Between China and Mongolia</h1>
+            <p>HiCargo offers fast, secure, and affordable logistics solutions for businesses and individuals shipping between China and Mongolia.</p>
+        </div>
+    </section>
+
+    <!-- Tracking Section -->
+    <div class="container">
+        <section class="tracking">
+            <h2>Track Your Shipment</h2>
+            <form class="tracking-form" id="trackingForm">
+                <input type="text" id="trackingNumber" placeholder="Enter your tracking number" required>
+                <button type="submit" class="btn">Track Now</button>
+            </form>
+            
+            <!-- Loading Spinner -->
+            <div class="spinner" id="loadingSpinner"></div>
+            
+            <!-- Error Message -->
+            <div class="tracking-error" id="trackingError">
+                Sorry, we couldn't find information for this tracking number. Please verify and try again.
+            </div>
+            
+            <!-- Tracking Results -->
+            <div class="tracking-results" id="trackingResults">
+                <div class="tracking-details">
+                    <div class="tracking-header">
+                        <h3>Shipment <span id="shipmentId"></span></h3>
+                        <div id="shipmentStatus"></div>
+                    </div>
+                    <div class="tracking-body">
+                        <div class="tracking-info">
+                            <div class="tracking-info-item">
+                                <h4>Origin</h4>
+                                <p id="shipmentOrigin"></p>
+                            </div>
+                            <div class="tracking-info-item">
+                                <h4>Destination</h4>
+                                <p id="shipmentDestination"></p>
+                            </div>
+                            <div class="tracking-info-item">
+                                <h4>Estimated Delivery</h4>
+                                <p id="shipmentETA"></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Information -->
+                        <div class="tracking-price">
+                            <h4>Shipping Cost</h4>
+                            <div class="price-value" id="shipmentPrice"></div>
+                        </div>
+                        
+                        <div class="tracking-timeline" id="trackingTimeline">
+                            <!-- Timeline will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Shipment Registration</h3>
+                    <p>Register your shipment quickly and easily through our platform for efficient processing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Monitor your cargo's journey in real-time with our advanced tracking system.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Home Delivery</h3>
+                    <p>We deliver directly to your doorstep, providing convenience and saving you time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Cost Calculator</h3>
+                    <p>Estimate shipping costs accurately before sending your cargo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Address Linking</h3>
+                    <p>Link your addresses to streamline the shipping process for frequent use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Extensive Network</h3>
+                    <p>Access our wide network of branches in China and Ulaanbaatar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Section -->
+    <section class="network">
+        <div class="container">
+            <h2>Our Branch Network</h2>
+            <div class="branches">
+                <div class="branch-group">
+                    <h3>China Branches (5)</h3>
+                    <ul class="branch-list">
+                        <li>Beijing Branch</li>
+                        <li>Shanghai Branch</li>
+                        <li>Guangzhou Branch</li>
+                        <li>Shenzhen Branch</li>
+                        <li>Erlian Branch</li>
+                    </ul>
+                </div>
+                <div class="branch-group">
+                    <h3>Ulaanbaatar Branches (11)</h3>
+                    <ul class="branch-list">
+                        <li>UB Central Branch</li>
+                        <li>UB North District</li>
+                        <li>UB South District</li>
+                        <li>UB East District</li>
+                        <li>UB West District</li>
+                        <li>UB Airport Branch</li>
+                        <li>UB Downtown</li>
+                        <li>UB Industrial Zone</li>
+                        <li>UB Commercial District</li>
+                        <li>UB Khan-Uul District</li>
+                        <li>UB Chingeltei District</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About HiCargo</h3>
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking</a></li>
+                        <li><a href="#">Home Delivery</a></li>
+                        <li><a href="#">Cost Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: info@hicargo.mn</li>
+                        <li>Phone: +976 7575-7575</li>
+                        <li>UB Central Branch: Peace Avenue 54</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 HiCargo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login/Register Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Account Access</h2>
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="tabs">
+                <button class="tab active" onclick="openTab('login')">Login</button>
+                <button class="tab" onclick="openTab('register')">Register</button>
+            </div>
+            <div class="tab-content active" id="login">
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Login</button>
+                </form>
+                <p style="margin-top: 15px; text-align: center;">
+                    <a href="#" style="color: var(--primary);">Forgot password?</a>
+                </p>
+            </div>
+            <div class="tab-content" id="register">
+                <form>
+                    <div class="form-group">
+                        <label for="reg-name">Full Name</label>
+                        <input type="text" id="reg-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-phone">Phone Number</label>
+                        <input type="tel" id="reg-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-password">Password</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirm">Confirm Password</label>
+                        <input type="password" id="reg-confirm" required>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
